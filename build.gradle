@@ -15,7 +15,7 @@ buildscript {
 
     dependencies {
         classpath 'com.bmuschko:gradle-tomcat-plugin:2.4.1'
-        classpath 'mysql:mysql-connector-java:6.0.6'
+        classpath 'mysql:mysql-connector-java:8.0.15'
         classpath 'org.flywaydb:flyway-gradle-plugin:5.1.4'
     }
 }
@@ -30,6 +30,7 @@ dependencies {
     def springWebMvcVersion = '5.0.2.RELEASE'
     def springSecurityVersion = '5.0.0.RELEASE'
     def springAopVersion = '5.0.4.RELEASE'
+    def mySqlVersion = '8.0.15'
     
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
@@ -49,7 +50,7 @@ dependencies {
 	compile "org.springframework.security:spring-security-taglibs:${springSecurityVersion}"
 	compile "org.springframework:spring-aop:${springAopVersion}"
     
-    compile 'mysql:mysql-connector-java:6.0.6'
+    compile "mysql:mysql-connector-java:${mySqlVersion}"
     compile 'org.hibernate:hibernate-core:5.2.12.Final'
     compile 'org.hibernate:hibernate-validator:6.0.7.Final'
     compile 'org.hibernate:hibernate-search-orm:5.9.1.Final'
@@ -77,7 +78,7 @@ dependencies {
 
 flyway {
 	driver = 'com.mysql.cj.jdbc.Driver'
-    url = 'jdbc:mysql://localhost:3306?autoReconnect=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC'
+    url = 'jdbc:mysql://localhost:3306/library_db?autoReconnect=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC'
     user = 'library-spring'
     password = 'library-spring'
     schemas = ['library_db']
