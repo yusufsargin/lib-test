@@ -1,6 +1,7 @@
 package com.wkrzywiec.spring.library.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -22,6 +23,7 @@ import javax.sql.DataSource;
 public class LibrarySecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
+    @Qualifier("userDetailService")
     private UserDetailsService libraryUserDetailsService;
 
     @Autowired
