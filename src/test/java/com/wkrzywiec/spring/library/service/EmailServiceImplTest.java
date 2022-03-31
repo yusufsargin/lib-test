@@ -52,6 +52,6 @@ public class EmailServiceImplTest {
 
         String generatePath = this.emailService.generateResetPath(user, path, token);
 
-        assertTrue("Generated path include token", generatePath.contains("&token" + token));
+        assertTrue("Generated path include token", generatePath.contains("&token=" + token));
     }
 }

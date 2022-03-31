@@ -9,9 +9,9 @@ public class TestRunner {
         Result result = JUnitCore.runClasses(ServiceTestSuits.class);
 
         for (Failure failure : result.getFailures()) {
-            System.out.println(failure.toString());
+            System.out.println("ERROR => " + failure.toString());
         }
 
-        System.out.println(result.wasSuccessful());
+        System.out.println("Is Passed All test => " + result.wasSuccessful());
     }
 }
